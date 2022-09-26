@@ -1,0 +1,39 @@
+.product{
+    box-shadow: 3px 4px 8px 2px rgb(241, 234, 234);
+    margin: 18px;
+    position: relative;
+    border-radius: 10px;
+    height: 440px;
+
+}
+.product img{
+    width: 20vw;
+    margin: 10px;
+    border-radius: 5px;
+}
+.product-info{
+    padding: 10px;
+}
+.price{
+    margin: 5px 0;
+}
+.product p{
+    margin: 8px;
+}
+.product-name{
+    margin: 0;
+    font-family: 'sans-serif';
+    font-size: 16px;
+}
+
+.btn-cart{
+    background-color: rgb(247, 192, 90);
+    border: none;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
