@@ -15,3 +15,14 @@
 .header a:hover{
     color: yellow;
 }
+.user{
+    color: white;
+    margin-left: 10px;
+}
+
+.logout{
+    margin-left: 10px;
+    background-color: #1C2B35;
+    color: white;
+    font-size: 16px;
+}
