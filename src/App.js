@@ -1,54 +1,60 @@
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import './App.css';
-import Main from './layouts/Main';
-import Shop from './components/Shop/Shop'
-import Order from './components/Orders/Order';
-import Inventory from './components/Inventory/Inventory';
-import Signup from './components/Signup/Signup';
-import { ProductAndCartLoader } from './loaders/ProductAndCartLoader';
-import Login from './components/Login/Login';
-import Shipping from './components/Shipping/Shipping';
-import PrivateRoute from './routes/PrivateRoute';
-
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import "./App.css";
+import Main from "./layouts/Main";
+import Shop from "./components/Shop/Shop";
+import Order from "./components/Orders/Order";
+import Inventory from "./components/Inventory/Inventory";
+import Signup from "./components/Signup/Signup";
+import { ProductAndCartLoader } from "./loaders/ProductAndCartLoader";
+import Login from "./components/Login/Login";
+import Shipping from "./components/Shipping/Shipping";
+import PrivateRoute from "./routes/PrivateRoute";
 
 function App() {
   const router = createBrowserRouter([
     {
-      path: '/',
+      path: "/",
       element: <Main></Main>,
       children: [
         {
-          path: '/',
-          loader:() => fetch('products.json'),
-          element: <Shop></Shop>
+          path: "/",
+          element: <Shop></Shop>,
         },
         {
-          path: '/orders',
+          path: "/orders",
           loader: ProductAndCartLoader,
-          element: <Order></Order>
+          element: <Order></Order>,
         },
         {
-          path: '/inventory',
-          element: <PrivateRoute><Inventory></Inventory></PrivateRoute>
+          path: "/inventory",
+          element: (
+            <PrivateRoute>
+              <Inventory></Inventory>
+            </PrivateRoute>
+          ),
         },
         {
-          path: '/shipping',
-          element: <PrivateRoute><Shipping></Shipping></PrivateRoute>
+          path: "/shipping",
+          element: (
+            <PrivateRoute>
+              <Shipping></Shipping>
+            </PrivateRoute>
+          ),
         },
         {
-          path: '/signup',
-          element: <Signup></Signup>
+          path: "/signup",
+          element: <Signup></Signup>,
         },
         {
-          path: '/login',
-          element: <Login></Login>
-        }
-      ]
-    }
-  ])
+          path: "/login",
+          element: <Login></Login>,
+        },
+      ],
+    },
+  ]);
   return (
-    <div >
-     <RouterProvider router={router}></RouterProvider>
+    <div>
+      <RouterProvider router={router}></RouterProvider>
     </div>
   );
 }

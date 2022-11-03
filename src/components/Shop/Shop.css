@@ -10,6 +10,25 @@
     margin:0 20px;
 }
 
+.pagination{
+    margin: 10px 0;
+    width: 100%;
+}
+.pagination button{
+    margin-right: 10px;
+    padding: 5px 10px;
+}
+select{
+    padding: 5px;
+}
+
+.pagination .selected{
+    background-color: rgb(60, 60, 243);
+    font-weight: bold;
+    color: white;
+    border: .5px solid rgb(49, 49, 197);
+}
+
 @media screen and (max-width:720px) {
     .products-container{
         grid-template-columns: 1fr;
